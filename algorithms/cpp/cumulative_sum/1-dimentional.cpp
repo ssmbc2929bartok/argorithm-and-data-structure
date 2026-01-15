@@ -10,7 +10,7 @@
 /*       アカウントなどはGithubに       */
 
 using namespace std;
-using sumType = int;  // 状況に応じて変更してね
+using sumType = int;  // 全体の変数の型。状況に応じて変更してね
 
 vector<sumType> gCmlSum;  // 累積和を保存するvector
 
