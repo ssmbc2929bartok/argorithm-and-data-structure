@@ -25,21 +25,27 @@ void input(sumType index, sumType inp) {
 }
 
 // 全区間累積和を計算する関数
-void calcAllSum() {
-  for (int i = 1; i <= gCmlSum.size(); i++) {
-    gCmlSum[i] = gCmlSum[i] + gCmlSum[i - 1];
+sumType calcAllSum() {
+  for (int i = 1; i < gCmlSum.size(); i++) {
+    gCmlSum[i] += gCmlSum[i - 1];
   }
+  return gCmlSum.back();
 }
 
 // 区間[a, b]の累積和を計算する関数
-void calcSecSum(int a, int b, bool isUp) {  // isUp = 1:aからbまで昇順, 2:bからaまで降順
+// isUp = 0:終点方向, 1:[0]に向かって進んでいくよ
+sumType calcSecSum(int a, int b, bool isUp) {
+  if (a > b) swap(a, b);
+
   if (isUp) {
     for (int i = a + 1; i <= b; i++) {
-      gCmlSum[i] = gCmlSum[i] + gCmlSum[i - 1];
+      gCmlSum[i] += gCmlSum[i - 1];
     }
+    return gCmlSum[b];
   } else {
     for (int i = b - 1; i >= a; i--) {
-      gCmlSum[i] = gCmlSum[i] + gCmlSum[i + 1];
+      gCmlSum[i] += gCmlSum[i + 1];
     }
+    return gCmlSum[a];
   }
 }
