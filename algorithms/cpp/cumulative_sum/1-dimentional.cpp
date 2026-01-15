@@ -21,7 +21,7 @@ void initCumulativeSum(sumType size) {
 
 // 値を入れるための関数
 void input(sumType index, sumType inp) {
-  gCmlSum[index] = gCmlSum[index - 1] + inp;
+  gCmlSum[index] = inp;
 }
 
 // 全区間累積和を計算する関数
