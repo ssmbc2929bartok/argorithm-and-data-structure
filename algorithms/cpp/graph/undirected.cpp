@@ -4,9 +4,21 @@ using namespace std;
 using Graph = vector<vector<int>>;  // main関数内などで（全体の大きさ + 1）のサイズを確保すること
 Graph G;
 
-void insert(Graph& G, int V, int ins) {
-  G[V].push_back(ins);
-  G[ins].push_back(V);
+// 連結リスト表現での代入
+void insert(Graph& G, int a, int b) {
+  G[a].push_back(b);
+  G[b].push_back(a);
+}
+
+// 隣接行列表現での代入
+void insert(Graph& G, vector<vector<int>> mat) {
+  for (int i = 1; i <= mat.size(); i++) {
+    for (int j = 1; j <= mat[i].size(); j++) {
+      if (mat[i][j] == 1) {
+        G[i].push_back(j);
+      }
+    }
+  }
 }
 
 // 連結リストを表示する
