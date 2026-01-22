@@ -23,11 +23,16 @@ void insert(Graph& G, vector<vector<int>> mat) {
 
 // 連結リストを表示する
 //  頂点の表示順を昇順にしたいときはsort(G[i].begin(), G[i].end());などを先に実行すること
-void show(const Graph& G, int V) {
+void showList(const Graph& G, int V) {
   for (int next_v : G[V]) {
     cout << next_v << " ";
   }
   cout << endl;
+}
+
+// 各頂点から出る辺の数を表示する
+void showEdge(const Graph& G, int v) {
+  cout << G[v].size() << endl;
 }
 
 vector<bool> seen;
