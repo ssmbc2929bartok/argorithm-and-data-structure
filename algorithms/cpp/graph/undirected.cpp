@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using Graph = vector<vector<int>>;  // main関数内などで（全体の大きさ + 1）のサイズを確保すること
-Graph G;
+// グラフ型
+//  main関数内などで（全体の大きさ + 1）のサイズを確保すること
+using Graph = vector<vector<int>>;
 
 // 連結リスト表現での代入
 void insert(Graph& G, int a, int b) {
