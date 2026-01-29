@@ -10,11 +10,11 @@ queue gQueueTail = 0;           /*queueの末尾を表す*/
 queue gQueueSize = 0;           /*queueのサイズを表す*/
 
 /*関数原型宣言*/
-void enqueue(queue inp);
-queue dequeue(void);
-queue queueSize(void);
-void ringBuff(queue end);
-void error(char* scr);
+void enqueue(queue inp);  /*待ち行列の末尾にデータを格納する関数*/
+queue dequeue(void);      /*待ち行列の末尾にデータを格納する関数*/
+queue queueSize(void);    /*待ち行列の大きさを返す関数*/
+void ringBuff(queue end); /*リングバッファ実現用関数*/
+void error(char* scr);    /*エラー操作を知らせて強制停止する関数*/
 
 /*待ち行列の末尾にデータを格納する関数*/
 void enqueue(queue inp) {
@@ -26,7 +26,7 @@ void enqueue(queue inp) {
   return;
 }
 
-/*待ち行列の先端からデータを取り出す関数*/
+/*待ち行列の末尾にデータを格納する関数*/
 queue dequeue(void) {
   if (gQueueFront == gQueueTail) {
     error("error:dequeue:gQueue is empty!"); /*gQueueが空の場合はエラー出力*/

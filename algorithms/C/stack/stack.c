@@ -8,10 +8,10 @@ stack gStack[G_STACK_SIZE]; /*stack本体*/
 stack gStackNum = 0;        /*stackの末尾（＝データサイズ）を表す*/
 
 /*関数原型宣言*/
-void error(char* scr);
-void push(stack inp);
-stack pop(void);
-stack stackSize(void);
+void error(char* scr); /*エラー操作を知らせて強制停止する関数*/
+void push(stack inp);  /*スタックにデータを積む(push)関数*/
+stack pop(void);       /*スタックの一番上のデータを拾う(pop)関数*/
+stack stackSize(void); /*スタックのサイズを返す関数*/
 
 /*スタックにデータを積む(push)関数*/
 void push(stack inp) {
