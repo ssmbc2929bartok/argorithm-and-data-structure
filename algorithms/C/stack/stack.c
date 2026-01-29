@@ -37,6 +37,7 @@ stack stackSize(void) {
 
 /*エラー操作を知らせて強制停止する関数*/
 void error(char* scr) {
+  fflush(stdout);
   fprintf(stderr, "%s/n", scr); /*標準エラー出力*/
   exit(1);                      /*異常強制終了*/
 }
