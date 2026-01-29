@@ -12,7 +12,7 @@ queue gQueueSize = 0;           /*queueのサイズを表す*/
 /*関数原型宣言*/
 void enqueue(queue inp);  /*待ち行列の末尾にデータを格納する関数*/
 queue dequeue(void);      /*待ち行列の末尾にデータを格納する関数*/
-queue queueSize(void);    /*待ち行列の大きさを返す関数*/
+queue size(void);         /*待ち行列の大きさを返す関数*/
 void ringBuff(queue end); /*リングバッファ実現用関数*/
 void error(char* scr);    /*エラー操作を知らせて強制停止する関数*/
 
@@ -37,7 +37,7 @@ queue dequeue(void) {
 }
 
 /*待ち行列の大きさを返す関数*/
-queue queueSize(void) {
+queue size(void) {
   return gQueueSize;
 }
 
