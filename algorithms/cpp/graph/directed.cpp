@@ -35,10 +35,10 @@ void showEdge(const Graph& G, int v) {
   cout << G[v].size() << endl;
 }
 
-vector<bool> seen;
 // 深さ優先探索
 // 使用前にseen.assign(要素数, false);を記述すること
 void DFS(const Graph& G, int v) {
+  vector<bool> seen;
   seen[v] = true;
 
   for (auto next_v : G[v]) {
@@ -46,5 +46,28 @@ void DFS(const Graph& G, int v) {
       continue;
     }
     DFS(G, next_v);
+  }
+}
+
+void BFS(Graph &G, auto N){
+  vector<bool> visited(N + 1, false);
+  queue<int> q;
+
+  q.push(1);
+  visited[1] = true;
+
+  int ans = 0;
+
+  while (!q.empty()) {
+    int u = q.front();
+    q.pop();
+    ans++;
+
+    for (int v : G[u]) {
+      if (!visited[v]) {
+        visited[v] = true;
+        q.push(v);
+      }
+    }
   }
 }
